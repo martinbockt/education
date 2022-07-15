@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title>XU Code Factory</title>
+    <meta name="title" content="XU Code Factory">
+    <meta name="description" content="Give your project the boost it needs.">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://xu-university.com">
+    <meta property="og:title" content="XU Code Factory">
+    <meta property="og:description" content="Give your project the boost it needs.">
+    <meta property="og:image" content="./images/techCons.svg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://xu-university.com">
+    <meta property="twitter:title" content="XU Code Factory">
+    <meta property="twitter:description" content="Give your project the boost it needs.">
+    <meta property="twitter:image" content="./images/techCons.svg">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="194x194" href="favicon/favicon-194x194.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="favicon/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#1eb0f9">
+    <link rel="shortcut icon" href="favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#1eb0f9">
+    <meta name="msapplication-config" content="browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" href="./css/template.css">
+    <link rel="stylesheet" href="./css/price.css">
+    <link rel="stylesheet" href="./css/mobilenav.css">
+    <link rel="stylesheet" href="./css/fonts.css">
+    <link rel="stylesheet" href="./css/toggle.css">
+    <script type="module" src="./js/main.js" async defer></script>
+</head>
+<body>
+    <input name="toggle" id="toggleinput" class="toggle" type="checkbox">
+    <label for="toggleinput" id="toggle-label">
+        <span id="toggle-span" data-on="On" data-off="Off"></span>
+    </label>
+    <div id="variables">
+        <header id="header">
+            
+        </header>
+        <main>
+            <section>
+                <div class="wrapper">
+                    <form action="https://submit-form.com/hcpVi19c" oninput="calculation.value = parseInt(base.value) + parseInt(areaValue(project)) * parseInt(timeRange.value) + parseInt((onboarding.checked === true) ? 50000 : 0)">
+                        <div>
+                            <h2>Price Calculator</h2>
+                            <fieldset id="price">
+                                <legend hidden>Price Calculator</legend>
+                                <div id="baseprice">
+                                    <label>Base Price</label>
+                                    <span></span>
+                                    <output id="base" name="base">30000</output>
+                                </div>
+                                <div>
+                                    <label for="project">Project Area</label>
+                                    <select id="project" name="project" onchange="area.value = areaValue(this)">
+                                        <option disabled selected value> -- select an option -- </option>
+                                        <option value="mobile">Mobile App Development</option>
+                                        <option value="web">Web App Development</option>
+                                        <option value="consultations">Technical Consultations</option>
+                                    </select>
+                                <output id="area" name="area"></output>
+                                </div>
+                                <div>
+                                    <label for="timeRange">Estimated Time</label>
+                                    <input type="range" min="1" max="12" value="1" id="timeRange" name="timeRange" oninput="time.value = this.value"/>
+                                    <output id="time" name="time" for="timeRange">1</output>
+                                </div>
+                                <div>
+                                    <label for="onboarding">Technical Onboarding</label>
+                                    <input type="checkbox" id="onboarding" value="yes" name="onboarding" onchange="onboardingCheck.value = (this.checked === true) ? 50000 : 0"/>
+                                    <output id="onboardingCheck" name="onboardingCheck">0</output>
+                                </div>
+                                <div>
+                                    <label name="estimatedPrice" for="calculation">Estimated Price</label><span></span><output id="calculation" name="calculation">30000</output>
+                                </div>
+                            </fieldset>
+                        </div>
+                        <div id="contactDiv">
+                            <h2>Project Request</h2>
+                            <fieldset id="contact">
+                                <legend hidden>Get in touch</legend>
+                                <div>
+                                    <label for="name">Name</label>
+                                    <input 
+                                        type="text"
+                                        id="name"
+                                        name="name"
+                                        placeholder="Name"
+                                        required=""
+                                    />
+                                </div>
+                                <!-- Honeypot -->
+                                <input 
+                                    type="text"
+                                    id="forename"
+                                    name="forename"
+                                    style="display: none;"
+                                    tabindex="-1"
+                                    autocomplete="off"
+                                />
+                                <!-- Honeypot -->
+                                <div>
+                                    <label for="email">Email</label>
+                                    <input
+                                        type="email"
+                                        id="email"
+                                        name="email"
+                                        placeholder="Email"
+                                        required=""
+                                    />
+                                </div>
+                                <div>
+                                    <label for="info">Project Informations</label>
+                                    <textarea
+                                    id="info"
+                                    name="info"
+                                    placeholder="Project Informations"
+                                    required=""
+                                    ></textarea>
+                                </div>
+                                <div>
+                                    <label for="message">Message</label>
+                                    <textarea
+                                    id="message"
+                                    name="message"
+                                    placeholder="Message"
+                                    required=""
+                                    ></textarea>
+                                </div>
+                            </fieldset>
+                            <button type="submit">Send</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </main>
+        <footer id="footer" class="flex">
+        
+        </footer>
+    </div>
+    <script>
+        const areaValue = (element) => element.value === '' ? 0 : (element.value === "mobile" || element.value === "web" ? 15000 : 20000)
+    </script>
+</body>
+</html>

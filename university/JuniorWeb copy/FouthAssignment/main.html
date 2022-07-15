@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #main div {
+            width: 30px;
+            height: 30px;
+            border: 1px solid black;
+            display: grid;
+            place-items: center;
+        }
+    </style>
+</head>
+<body style="margin: 0;">
+    <header style="display: flex; height: 100px; justify-content: space-between; background: #030425; align-items: center;">
+        <h1 style="color: white; padding-left: 10px;">Fourth Assignment</h1>
+        <img height="100" src="https://xu-university.com/wp-content/uploads/2021/12/XUni21_HangTag_BlueBlue_pos_RGB.jpg">
+    </header>
+    <main style="padding: 10px;">
+        <div>
+            <input id="number" type="number"/>
+            <button onclick="create()">Generate Number</button>
+            <button onclick="create(Math.floor(Math.random() * 100))">Generate Random Number</button>
+            <button onclick="createMultiple()">Generate Multiple Random Number</button>
+            <button onclick="highlight()">Highlight</button>
+        </div>
+        <div id="main" style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px;">
+
+        </div>
+    </main>
+</body>
+<script>
+
+    let list = []
+    let highlighted = false
+     
+    const addStyle = () => {
+        list.map(x => {
+            let divs = document.querySelectorAll(`.background${x}`)
+            const randomColor = Math.floor(Math.random()*16777215).toString(16)
+            divs.forEach(div => div.style.backgroundColor = `#${randomColor}`)
+        })
+    }
+
+    const removeStyle = () => {
+        list.map(x => {
+            let divs = document.querySelectorAll(`.background${x}`)
+            divs.forEach(div => div.style.backgroundColor = "#fff")
+        })
+    }
+
+    const box = (number) => {
+        const div = document.createElement("div")
+        div.setAttribute('class', `background${number}`)
+        div.innerText = number
+        document.getElementById('main').appendChild(div)
+    }
+
+    const addToList = (number) => !list.includes(number) ? list.push(number) : null
+
+    const create = (number = (document.getElementById('number').value % 100)) => {
+        number != "" ? (box(number), addToList(number)) : null
+    }
+
+    const createMultiple = () => {
+        for (i = 0; i < document.getElementById('number').value; i++) {
+            create(Math.floor(Math.random() * 100))
+        }
+    }
+
+    const highlight = () => {
+        !highlighted ? addStyle() : removeStyle()
+        highlighted = !highlighted
+    }
+    
+</script>
+</html>

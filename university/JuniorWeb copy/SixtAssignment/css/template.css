@@ -1,0 +1,375 @@
+:root {
+    --ON: initial;
+    --OFF: ;
+
+    --light: var(--OFF);
+    --dark: var(--ON);
+
+    
+
+    --main-dark-color: #030425;
+    --main-bright-color: #ffffff;
+
+    --primary-color: #030425;
+    --secondary-color: #1eb0f9;
+
+    color-scheme: light dark;
+    font-family: wotfard;
+
+    font-size: 1rem;
+    font-size: clamp(1rem, 0.95rem + 0.25vw, 1.25rem);
+
+}
+
+#variables {
+    --theme-bg-color: var(--dark, #030425) var(--light, #ffffff);
+    --theme-color: var(--dark, #ffffff) var(--light, #030425);
+    --theme-a-color: var(--dark, #1eb0f9) var(--light, #030425);
+    --theme-a-hover: var(--dark, #ffffff) var(--light, #1eb0f9);
+    color: var(--theme-color);
+
+    --socialmedia-icon-filter: var(--dark, invert(8%) sepia(15%) saturate(4532%) hue-rotate(210deg) brightness(90%) contrast(112%)) var(--light, brightness(100))
+}
+
+#toggleinput:checked ~ #variables {
+    --light: var(--ON);
+    --dark: var(--OFF);
+}
+  
+#toggleinput ~ #variables {
+    --light: var(--OFF); 
+    --dark: var(--ON);
+}
+
+
+@media (prefers-color-scheme: light) {
+    /* :root {
+        --light: var(--ON);
+        --dark: var(--OFF);        
+    } */
+
+    #toggle-input:checked ~ #variables {
+        --light: var(--OFF);
+        --dark: var(--ON);
+    }
+      
+    #toggle-input ~ #variables {
+        --light: var(--ON); 
+        --dark: var(--OFF);
+    }
+}
+
+/*
+HTML Elements
+*/
+
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 2.25rem;
+    margin-top: unset;
+    margin-bottom: 2.25rem;
+}
+
+h3 {
+    font-size: 1.8rem;
+    margin-top: unset;
+    margin-bottom: unset
+}
+
+header, footer, section, #variables {
+    background-color: var(--theme-bg-color);
+}
+
+body, h1 {
+    margin: 0;
+}
+
+main {
+    padding-top: 80px;
+}
+
+section {
+    padding: 4.5rem 0px;
+}
+
+/* footer {
+    margin-top: 8rem;
+} */
+
+ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+ul a {
+    text-decoration: none;
+}
+
+a {
+    color: var(--theme-a-color);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--theme-a-hover);
+}
+
+nav a.active {
+    color: var(--theme-a-hover);
+}
+
+form :is(input, textarea, select) {
+    min-height: 30px;
+    max-width: 100%;
+    background-color: var(--theme-color);
+    color: var(--theme-bg-color);
+    border-radius: 15px;
+    padding: 5px 20px;
+    font-family: wotfard;
+    border: 2px solid var(--secondary-color);
+}
+
+form :is(input, textarea)::placeholder {
+    color: var(--theme-bg-color);
+}
+
+form textarea {
+    min-height: 80px;
+}
+
+form button {
+    width: 120px;
+    height: 40px;
+    margin-left: auto;
+    border-radius: 10px;
+    border: unset;
+    background-color: var(--secondary-color);
+}
+
+form :is(button, [type="checkbox"], [type="range"], select) {
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: var(--primary-color);
+}
+
+@media screen and (max-width: 850px) {
+    header .wrapper nav {
+        display: none;
+    }
+    section {
+        padding: 3rem 0;
+    }
+}
+
+/*
+ID Elements
+*/
+
+#header {
+    position: fixed;
+    width: 100%;
+    top: 0px;
+    z-index: 1;
+    box-shadow: 0px 3px var(--secondary-color);
+}
+
+#header .wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+
+#header ul {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+}
+
+#footer {
+    position: relative;
+}
+
+#footer .wrapper {
+    padding: 5%;
+    justify-content: space-between;
+    padding-right: calc(165.69px + 5%);
+    width: 100%;
+}
+
+/*
+Class Elements
+*/
+
+.btn {
+    border: 2px solid var(--theme-a-color);
+    padding: 10px 20px;
+    width: 150px;
+    text-align: center;
+}
+
+.btn-box {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.btn-box .btn {
+    border-color: var(--secondary-color);
+    color: var(--secondary-color);
+}
+
+.box {
+    padding: 10%;
+    border: 3px solid var(--theme-a-color);
+    justify-content: space-between;
+}
+
+.image-box {
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    background-color: var(--theme-color);
+    color: var(--theme-bg-color);
+}
+
+.image-box h3 {
+    font-weight: 500;
+}
+
+.image-box i{
+    font-weight: 300;
+}
+
+.image-box > img {
+    border-radius: inherit;
+    aspect-ratio: 1.25/1;
+    object-fit: cover;
+}
+
+.image-box p {
+    margin: 20px 0px;
+    font-size: 0.95rem;
+}
+
+.image-box > div {
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+    height: 100%;
+}
+
+.box-bg-img {
+    padding: 20px;
+    text-align: left;
+    aspect-ratio: 1.25/1;
+    position: relative;
+    color: var(--main-bright-color);
+    background-size: cover;
+    box-shadow:inset 0 0 0 2000px rgba(0, 0, 0, 0.45);
+}
+
+.box-bg-img p {
+    font-weight: 200;
+}
+
+.box-bg-img a {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background: var(--main-bright-color);
+    width: 80px;
+    height: 40px;
+    display: grid;
+    place-items: center;
+    font-weight: 300;
+}
+
+.box-bg-img a:hover {
+    color: var(--main-dark-color);
+}
+
+.wrapper {
+    max-width: 1300px;
+    margin: auto;
+    padding: 0px 50px;
+    text-align: center;
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat( auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.grid-4 {
+    display: grid;
+    grid-template-columns: repeat( auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.flex {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+
+.align-left {
+    align-items: flex-start;
+}
+
+.social {
+    margin-top: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10%;
+    place-items: center;
+    padding: 0px 10%;
+}
+
+.social > :last-child {
+    filter: var(--socialmedia-icon-filter);
+}
+
+.social img {
+    width: 100%;
+}
+
+@media screen and (max-width: 850px) {
+
+    #footer .wrapper {
+        display: grid;
+        grid-template-columns: 1.5fr 1fr;
+        padding: 25px;
+    }
+
+    #footer .wrapper address {
+        grid-area: 2/1;
+    }
+
+    #footer .wrapper img {
+        height: calc(100% / 2 - 5.5px) !important;
+        bottom: 0px;
+    }
+
+    #partner {
+        align-items: flex-end;
+    }
+
+    .wrapper {
+        padding: 0 25px;
+    }
+}

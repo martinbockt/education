@@ -1,0 +1,109 @@
+main .wrapper {
+    max-width: 750px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+form fieldset{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin: unset;
+    padding: unset;
+    border: unset;
+}
+
+
+
+form fieldset div {
+    display: grid;
+    gap: 20px;
+    text-align: end;
+    align-items: center;
+}
+
+#price div {
+    grid-template-columns: 200px 2fr 160px;
+}
+
+#contact div {
+    grid-template-columns: 190px 1fr;
+}
+
+/* form fieldset div * {
+    height: 30px;
+} */
+
+#calculation {
+    text-align: end;
+}
+
+:is(#calculation, #base, #onboardingCheck)::after {
+    content: '€';
+}
+
+#area::after {
+    content: " per Month";
+}
+
+#time::after {
+    content: " Month";
+}
+
+#contactDiv {
+    display: flex;
+    flex-direction: column;
+}
+
+#contactDiv button {
+    margin-top: 30px;
+}
+
+@media screen and (max-width: 768px) {
+    #price > div:nth-child(3), #price > div:nth-child(4) {
+        grid-template-columns: 200px 1fr;
+    }
+
+    #price > :is(div:nth-child(3), div:nth-child(4)) :is(select, [type="range"]) {
+        grid-area: 2/2;
+    }
+
+
+    :is(#price > div:nth-child(3), #price > div:nth-child(4)) output {
+        grid-area: 2/1;
+    }
+}
+
+@media screen and (max-width: 500px) {
+
+    #price div {
+        grid-template-columns: 90px 1fr 100px;
+    }
+    
+    #contact div {
+        grid-template-columns: 90px 1fr;
+    }
+
+    #price > div:nth-child(3), #price > div:nth-child(4) {
+        grid-template-columns: 90px 1fr;
+    }
+
+    #price > :is(div:nth-child(3), div:nth-child(4)) :is(select, [type="range"]) {
+        grid-area: 2/2;
+    }
+
+
+    :is(#price > div:nth-child(3), #price > div:nth-child(4)) output {
+        grid-area: 2/1;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .wrapper {
+        padding: 0 20px;
+    }
+}

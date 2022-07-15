@@ -1,0 +1,36 @@
+#hero {
+    background-image: url(../images/hero.jpg);
+    box-shadow:inset 0 0 0 2000px rgba(0, 0, 0, 0.3);
+    background-size: cover;
+    background-position: center;
+    padding: 100px 0px;
+}
+
+#hero p {
+    font-size: 2rem;
+    color: white;
+}
+
+#refimg-1 {
+    background-image: url(../images/references/vw.png);
+}
+
+#refimg-2 {
+    background-image: url(../images/references/bosch.png);
+}
+
+#refimg-3 {
+    background-image: url(../images/references/mc-donalds.png);
+}
+
+#refimg-4 {
+    background-image: url(../images/references/abmahnsicher.png);
+}
+
+#refimg-5 {
+    background-image: url(../images/references/xu-group.png);
+}
+
+#refimg-6 {
+    background-image: url(../images/references/xu-university.png);
+}

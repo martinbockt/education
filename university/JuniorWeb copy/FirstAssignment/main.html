@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Primary Meta Tags -->
+        <title>Personal Profile Page</title>
+        <meta name="title" content="Personal Profile Page">
+        <meta name="description" content="First Web Development Assignment!">
+        <meta name="author" content="Martin Bock">
+
+        <!-- Favicon -->
+        <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+        <link rel="manifest" href="site.webmanifest">
+        <link rel="mask-icon" href="safari-pinned-tab.svg" color="#333333">
+        <meta name="msapplication-TileColor" content="#333333">
+        <meta name="theme-color" content="#333333">
+
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://xu-university.com">
+        <meta property="og:title" content="Personal Profile Page">
+        <meta property="og:description" content="First Web Development Assignment!">
+        <meta property="og:image" content="img.jpeg">
+
+        <!-- Twitter -->
+        <meta property="twitter:card" content="summary_large_image">
+        <meta property="twitter:url" content="https://xu-university.com">
+        <meta property="twitter:title" content="Personal Profile Page">
+        <meta property="twitter:description" content="First Web Development Assignment!">
+        <meta property="twitter:image" content="img.jpeg">
+        
+        <!-- Style -->
+        <style>
+            header, section, footer {
+                background-color: #ededed;
+                padding: 20px;
+            }
+            header, footer {
+                margin: 0 20px;
+            }
+            table :is(td, th):nth-child(2n){
+                padding: 5px;
+                background-color: white;
+            }
+            table :is(td, th):nth-child(2n-1){
+                padding: 5px;
+                background-color: #dadada;
+            }
+        </style>
+    </head>
+    <body style="max-width: 1200px; margin: auto;">
+        <header>
+            <nav style="display: flex; gap: 1.5em;">
+                <a href="#introduction">Introduction</a>
+                <a href="#education">Education</a>
+                <a href="#skills">Skills</a>
+            </nav>
+        </header>
+        <main style="display: grid; grid-template-columns: 30% 1fr; gap: 25px; padding: 20px;">
+            <img src="portrait.jpeg" alt="portrait of Martin Bock" style="width: 100%; grid-row-start: 1; grid-row-end: 3; height: 100%; object-fit: cover;">
+            <section id="introduction">
+                <div>
+                    <h1>Martin Bock</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <i>E=mc<sup>2</sup></i>
+                </div>
+            </section>
+            <section id="education">
+                <h2>Education</h2>
+                <table style="width: 100%;">
+                    <thead>
+                        <tr>
+                            <th>From - To</th>
+                            <th>Institution</th>
+                            <th>Location</th>
+                            <th>Degree</th>
+                            <th>Website</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2021 - 2024</td>
+                            <td>XU University</td>
+                            <td>Potsdam</td>
+                            <td>Coding and Software Engineering</td>
+                            <td><a href="https://xu-university.com" rel="noopener noreferrer" target="_blank">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>2017 - 2020</td>
+                            <td>Herderschule Kassel</td>
+                            <td>Kassel</td>
+                            <td>Fachabitur</td>
+                            <td><a href="https://herderschule-kassel.de" rel="noopener noreferrer" target="_blank">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>2012 - 2017</td>
+                            <td>Gesamtschule Fuldatal</td>
+                            <td>Ihringshausen</td>
+                            <td>Qualifizierter Realschulabschluss</td>
+                            <td><a href="http://www.gsfuldatal.de" rel="noopener noreferrer" target="_blank">link</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <section id="skills" style="grid-column-start: 1; grid-column-end: 3;">
+                <h2>Skills</h2>
+                <ul style="display: flex; gap: 25px; list-style: none; padding: unset;">
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JS</li>
+                    <li>React</li>
+                    <li>Delphi</li>
+                    <li>Prolog</li>
+                    <li>SQL</li>
+                    <li>Swift</li>
+                </ul>
+            </section>
+        </main>
+        <footer style="display: flex; justify-content: space-between;">
+            <p>Student of the <a href="https://xu-university.com" rel="noopener noreferrer" target="_blank">XU Exponential University of Applied Sciences</a></p>
+            <div>
+                <a href="https://www.linkedin.com/in/martin-bock-530408204/" rel="noopener noreferrer" target="_blank"><img src="linkedin.png" alt="LinkedIn Logo" height="50"></a>
+                <a href="https://github.com/martinbockt" rel="noopener noreferrer" target="_blank"><img src="github.png" alt="Github Logo" height="50"></a>
+            </div>
+        </footer>
+    </body>
+</html>
+

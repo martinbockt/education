@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Excercise</title>
+        <meta name="description" content="Logged In">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <main>
+            <form>
+                <div style="display: grid; grid-template-columns: 200px 1fr; gap: 20px;">
+                    <label for="from">From</label>
+                    <input id="from" name="from" type="text" placeholder="john@jgraph.com"/>
+                    <label for="subject">Subject</label>
+                    <input id="subject" name="subject" type="text" placeholder="Greeting"/>
+                    <label for="to">To</label>
+                    <input id="to" name="to" type="text" placeholder="fred@jgraph.com"/>
+                    <label for="CC">CC</label>
+                    <input id="CC" name="CC" type="text"/>
+                    <label for="BCC">BCC</label>
+                    <input id="BCC" name="BCC" type="text"/>
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px;">
+                    <textarea style="grid-column: span 2" id="message" name="message" rows="5" cols="50" placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."></textarea>
+                    <input id="submit" name="submit" type="submit" value="SUBMIT"/>
+                    <input id="cancel" name="cancel" type="reset" value="RESET"/>
+                </div>
+            </form>
+        </main>
+    </body>
+</html>

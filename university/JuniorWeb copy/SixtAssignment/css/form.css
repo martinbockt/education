@@ -1,0 +1,66 @@
+form {
+    display: grid;
+    gap: 20px;
+}
+
+form > div {
+    display: grid;
+    grid-template-columns: 20% 1fr;
+    gap: 20px;
+}
+
+form > div > label {
+    text-align: initial;
+}
+
+form > button {
+    width: 40%;
+}
+
+/* form > div > :is(input, textarea) {
+    width: auto;
+} */
+
+#office .wrapper > #grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 25px;
+    grid-template-rows: 500px;
+}
+
+#office #contactbox, #office .flex img {
+    height: 100%;
+    max-height: 500px;
+}
+
+#office #contactbox div {
+    height: 100%;
+    flex-direction: column;
+    text-align: start;
+    align-items: flex-start;
+}
+
+#office #contactbox div :is(h4, p){
+    margin: unset;
+}
+
+iframe {
+    height: 100%;
+    width: 100%;
+}
+
+@media screen and (max-width: 620px) {
+    #contactbox {
+        flex-direction: column;
+        max-height: unset !important;
+    }
+    #contactbox img {
+        width: 100%;
+        object-fit: cover;
+        order: 2;
+    }
+
+    #office .wrapper > #grid {
+        grid-template-columns: 1fr;
+    }
+}
